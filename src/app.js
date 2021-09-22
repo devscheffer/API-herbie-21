@@ -1,9 +1,9 @@
 /** @format */
 
+require('dotenv/config');
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
-require("dotenv/config");
 
 // middleware
 
@@ -11,7 +11,7 @@ app.use(express.json());
 
 // route
 
-app.use("/pneu", require("./api/pneu/route"));
+app.use("/pneu", require("./api/pneu/router"));
 
 // database
 
