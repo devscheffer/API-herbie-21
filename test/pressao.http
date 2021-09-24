@@ -1,0 +1,23 @@
+get http://localhost:3000/pressao/
+
+###
+post http://localhost:3000/pressao/
+content-type: application/json
+
+{
+  "position": "fd",
+  "pressure": 33
+}
+
+###
+DELETE http://localhost:3000/pressao/614d56e25198ce459acf7792
+
+###
+PATCH http://localhost:3000/pressao/614d56e85198ce459acf7794
+content-type: application/json
+
+{
+  "position": "fd",
+  "pressure": 23
+}
+

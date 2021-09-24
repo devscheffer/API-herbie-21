@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cls_controller = require('./controller')
 
-router.post('/signup', cls_controller.post)
+router.post('/signup', cls_controller.signup)
 // router.get('/', cls_controller.get_all)
 // router.get('/:id', cls_controller.get_by_id)
 router.delete('/:id', cls_controller.delete)

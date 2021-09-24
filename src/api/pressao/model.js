@@ -2,13 +2,15 @@
 
 const mongoose = require("mongoose");
 
-const schema_pneu = new mongoose.Schema(
+const schema_pressao = new mongoose.Schema(
 	{
 		date: {
 			type: Date,
 			default: Date.now,
+			required: true,
+
 		},
-		id_pneu: {
+		position: {
 			type: String,
 			required: true,
 		},
@@ -17,7 +19,7 @@ const schema_pneu = new mongoose.Schema(
 			required: true,
 		},
 	},
-	{collection: "pneu"}
+	{collection: "pressao"}
 );
 
-module.exports = mongoose.model("pneu", schema_pneu);
+module.exports = mongoose.model("pressao", schema_pressao);
