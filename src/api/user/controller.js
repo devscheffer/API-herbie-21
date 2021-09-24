@@ -1,37 +1,35 @@
 /** @format */
 
-const obj = require("./model");
+const model = require("./model");
 const bcrypt = require("bcrypt");
 // [x] post
-exports.post = (req, res, next) => {
-	obj.find({email: req.body.email})
-		.exec()
-		.then((user) => {
-			if (user.length >= 1) {
-				return res.status(409).json({
-					message: "User already exists",
-				});
-			} else {
-				bcrypt.hash(req.body.password, 10, async (err, hash) => {
-					const obj_post = new obj({
-						email: req.body.email,
-						password: hash,
-					});
+exports.post = async (req, res, next) => {
+	try {
+		const obj_one = await model.find({email: req.body.email});
 
-					try {
-						const saved_obj_post = await obj_post.save();
-						res.status(201).json({
-							message: "User created successfully",
-							obj: saved_obj_post,
-						});
-					} catch (err) {
-						res.status(500).json({
-							error: err,
-						});
-					}
+		if (obj_one.length >= 1) {
+			return res.status(409).json({
+				message: "User already exists",
+			});
+		} else {
+			bcrypt.hash(req.body.password, 10, async (err, hash) => {
+				const obj_post = new model({
+					email: req.body.email,
+					password: hash,
 				});
-			}
+
+				const saved_obj_post = await obj_post.save();
+				res.status(201).json({
+					message: "User created successfully",
+					obj: saved_obj_post,
+				});
+			});
+		}
+	} catch (err) {
+		res.status(500).json({
+			error: err,
 		});
+	}
 };
 // [x] get_all
 // exports.get_all = async (req, res,next) => {
@@ -55,7 +53,7 @@ exports.post = (req, res, next) => {
 // [x] delete
 exports.delete = async (req, res, next) => {
 	try {
-		const obj_delete = await obj.deleteOne({_id: req.params.id});
+		const obj_delete = await model.deleteOne({_id: req.params.id});
 		res.status(200).json({
 			message: "User deleted successfully",
 			obj: obj_delete,
