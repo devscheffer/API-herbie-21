@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-// route
+// router
 
 app.use("/pneu", require("./api/pneu/router"));
 
