@@ -12,6 +12,7 @@ app.use(express.json());
 // router
 
 app.use("/pneu", require("./api/pneu/router"));
+app.use("/user", require("./api/user/router"));
 
 // database
 
