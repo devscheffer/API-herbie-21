@@ -2,8 +2,8 @@
 
 const model = require("./model");
 const bcrypt = require("bcrypt");
-
-// [x] post
+const jwt = require("jsonwebtoken");
+// [x] signup
 exports.signup = async (req, res, next) => {
 	try {
 		const model_check = await model.find({email: req.body.email});
@@ -25,6 +25,48 @@ exports.signup = async (req, res, next) => {
 					model: saved_model_post,
 				});
 			});
+		}
+	} catch (err) {
+		res.status(500).json({
+			error: err,
+		});
+	}
+};
+// [x] signup
+exports.login = async (req, res, next) => {
+	try {
+		const model_check = await model.findOne({email: req.body.email});
+
+		if (model_check.length < 1) {
+			return res.status(401).json({
+				message: "Auth failed",
+			});
+		} else {
+			bcrypt.compare(
+				req.body.password,
+				model_check.password,
+				async (err, result) => {
+					if (result) {
+						const token = jwt.sign(
+							{
+								email: model_check.email,
+								userId: model_check._id,
+							},
+							process.env.JWT_KEY,
+							{expiresIn: "1h"}
+						);
+						return res.status(200).json({
+							message: "Auth success",
+							model: model_check,
+							token: token,
+						});
+					} else {
+						return res.status(401).json({
+							message: "Auth failed",
+						});
+					}
+				}
+			);
 		}
 	} catch (err) {
 		res.status(500).json({
