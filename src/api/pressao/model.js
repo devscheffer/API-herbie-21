@@ -18,6 +18,10 @@ const schema_pressao = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
+        observation:{
+            type: String,
+            required: false,
+        }
 	},
 	{collection: "pressao"}
 );

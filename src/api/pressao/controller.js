@@ -8,6 +8,7 @@ exports.post = async (req, res,next) => {
 		date: req.body.date,
 		position: req.body.position,
 		pressure: req.body.pressure,
+		observation: req.body.observation,
 	});
 
 	try {
@@ -56,6 +57,7 @@ exports.patch = async (req, res,next) => {
 					date: req.body.date,
 					position: req.body.position,
 					pressure: req.body.pressure,
+					observation: req.body.observation,
 				},
 			}
 		);

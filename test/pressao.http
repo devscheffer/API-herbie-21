@@ -6,7 +6,8 @@ content-type: application/json
 
 {
   "position": "fd",
-  "pressure": 33
+  "pressure": 33,
+  "observation":"teste"
 }
 
 ###
