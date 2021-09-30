@@ -5,3 +5,6 @@
 npm install
 
 npm start
+
+## Requisitos
+
