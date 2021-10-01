@@ -15,7 +15,8 @@ app.use(express.json());
 // router
 app.use("/pressao", require("./api/pressao/router"));
 app.use("/user", require("./api/user/router"));
-
+app.get("/",()=>{
+    return 'hello world'})
 // error handler
 app.use((req, res, next) => {
 	const error = new Error("Not Found");

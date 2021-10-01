@@ -1,20 +1,18 @@
-get http://localhost:3000/pressao/
-
-###
+### Create
 post http://localhost:3000/pressao/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMwMTQzOTgsImV4cCI6MTYzMzAxNzk5OH0.p9EIXnIfh2ZYzDPWRLgzcpacBGLCiwouz7ijBrk3Ekg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMwNDk2NjksImV4cCI6MTYzMzA1MzI2OX0.CGMR0lRbH-z9_25eJqo2jiN7k8UwTADF8-zNP__RRSo
 
 {
   "position": "fd",
   "pressure": 33,
   "observation":"teste"
 }
+### Read
+get http://localhost:3000/pressao/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMwNDk2NjksImV4cCI6MTYzMzA1MzI2OX0.CGMR0lRbH-z9_25eJqo2jiN7k8UwTADF8-zNP__RRSo
 
-###
-DELETE http://localhost:3000/pressao/614d56e25198ce459acf7792
-
-###
+### Update
 PATCH http://localhost:3000/pressao/614d56e85198ce459acf7794
 content-type: application/json
 
@@ -22,4 +20,8 @@ content-type: application/json
   "position": "fd",
   "pressure": 23
 }
+
+### Delete
+DELETE http://localhost:3000/pressao/614d56e25198ce459acf7792
+
 

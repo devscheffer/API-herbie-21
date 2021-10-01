@@ -14,8 +14,8 @@ Instruções gerais:
 
 Os Web Services deverão contemplar pelo menos:
 - [ ] dois CRUD de entidades,
-- [ ] realizar login (preferência com JWT) e
-- [ ] uma funcionalidade específica, e
+- [ ] realizar login (preferência com JWT)
+- [?] uma funcionalidade específica
 - [ ] essas funcionalidades deverão persistir seus dados em um banco de dados não relacional (por exemplo, o MongoDB visto em aula).
 
 Conceito C:

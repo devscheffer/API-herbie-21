@@ -10,6 +10,5 @@ router.get("/", check_auth, controller.get_all);
 router.get("/:id", check_auth, controller.get_by_id);
 router.delete("/:id", check_auth, controller.delete);
 router.patch("/:id", check_auth, controller.patch);
-// router.get('/search', cls_controller.procurar)
 
 module.exports = router;
