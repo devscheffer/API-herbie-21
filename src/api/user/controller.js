@@ -34,17 +34,13 @@ exports.signup = async (req, res, next) => {
 };
 // [x] signup
 exports.login = async (req, res, next) => {
-    console.log('Cheguei aqui 1');
-    console.log(req.body);
 	try {
 		const model_check = await model.findOne({email: req.body.email});
-        console.log('Cheguei aqui 2');
 		if (model_check.length < 1) {
 			return res.status(401).json({
 				message: "Auth failed",
 			});
 		} else {
-            console.log('Cheguei aqui 3');
 			bcrypt.compare(
 				req.body.password,
 				model_check.password,
