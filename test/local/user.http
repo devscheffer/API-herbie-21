@@ -1,17 +1,25 @@
-### Signup
-post http://localhost:3000/user/signup
+@uri = http://localhost:3000
+@route = user
+@path = {{uri}}/{{route}}
+@id = 6155cb9f66dca8b0a27acd32
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMxODMzMjUsImV4cCI6MTYzMzE4NjkyNX0.tUQt-qvOk0iNvUr67Wlff1io954-S6j7tggFQeUN8pA
+
+### [x] Signup
+post {{path}}/signup
+content-type: application/json
+
+{
+  "email": "test3@test.com",
+  "password": "teste"
+}
+
+### [x] Login
+POST {{path}}/login
 content-type: application/json
 
 {
   "email": "test@test.com",
   "password": "teste"
 }
-
-### Login
-POST http://localhost:3000/user/login
-content-type: application/json
-
-{
-  "email": "test@test.com",
-  "password": "teste"
-}
+### [x] Delete
+delete {{path}}/{{id}}

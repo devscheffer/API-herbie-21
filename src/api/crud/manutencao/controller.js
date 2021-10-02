@@ -6,8 +6,8 @@ const model = require("./model");
 exports.post = async (req, res, next) => {
 	const model_post = new model({
 		date: req.body.date,
-		service: req.body.position,
-		category: req.body.pressure,
+		service: req.body.service,
+		category: req.body.category,
 		price: req.body.price,
 		observation: req.body.observation,
 	});
@@ -34,7 +34,11 @@ exports.get_all = async (req, res, next) => {
 exports.get_by_id = async (req, res, next) => {
 	try {
 		const model_id = await model.findById(req.params.id);
-		res.status(200).json(model_id);
+        if(model_id){
+            res.status(200).json(model_id);
+        }else{
+            res.status(404).json({message: "not found"});
+        };
 	} catch (err) {
 		res.status(400).json({message: err});
 	}

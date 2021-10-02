@@ -13,14 +13,25 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // router
-app.use("/pressao", require("./api/pressao/router"));
-app.use("/user", require("./api/user/router"));
+
+const route_user = require("./api/crud/user/router")
+const route_pressao = require("./api/crud/pressao/router")
+const route_km = require("./api/crud/km/router")
+const route_combustivel = require("./api/crud/combustivel/router")
+const route_manutencao = require("./api/crud/manutencao/router")
+
 app.get("/", () => {
 	return "hello world";
 });
+app.use("/user",route_user);
+app.use("/pressao", route_pressao);
+app.use("/km", route_km);
+app.use("/combustivel", route_combustivel);
+app.use("/manutencao", route_manutencao);
+
 // error handler
 app.use((req, res, next) => {
-	const error = new Error("Not Found");
+	const error = new Error("Route Not Found");
 	error.status = 404;
 	next(error);
 });

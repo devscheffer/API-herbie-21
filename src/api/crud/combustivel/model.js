@@ -10,19 +10,19 @@ const schema_combustivel = new mongoose.Schema(
 			required: true,
 		},
 		price: {
-			type: number,
+			type: Number,
 			required: true,
 		},
 		gas_type: {
-			type: string,
+			type: String,
 			required: true,
 		},
 		volume: {
-			type: number,
+			type: Number,
 			required: true,
 		},
 		km: {
-			type: number,
+			type: Number,
 			required: true,
 		},
 		observation: {
