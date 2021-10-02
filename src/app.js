@@ -15,8 +15,9 @@ app.use(express.json());
 // router
 app.use("/pressao", require("./api/pressao/router"));
 app.use("/user", require("./api/user/router"));
-app.get("/",()=>{
-    return 'hello world'})
+app.get("/", () => {
+	return "hello world";
+});
 // error handler
 app.use((req, res, next) => {
 	const error = new Error("Not Found");
@@ -37,7 +38,7 @@ mongoose.connect(process.env.db_connection, () => {
 });
 
 //server
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);
 	console.log(`http://localhost:${port}/`);
