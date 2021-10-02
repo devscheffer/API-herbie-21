@@ -34,6 +34,8 @@ exports.signup = async (req, res, next) => {
 };
 // [x] signup
 exports.login = async (req, res, next) => {
+    console.log('Cheguei aqui');
+    console.log(req.body);
 	try {
 		const model_check = await model.findOne({email: req.body.email});
 

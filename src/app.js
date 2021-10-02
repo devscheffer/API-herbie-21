@@ -34,8 +34,6 @@ app.use((err, req, res, next) => {
 
 // database
 const db_connection = `mongodb+srv://${process.env.mongodb_user}:${process.env.mongodb_password}@cluster0.3yhxp.mongodb.net/herbie-21`;
-
-console.log(db_connection);
 mongoose.connect(db_connection, () => {
 	console.log("connected to mongo");
 });
