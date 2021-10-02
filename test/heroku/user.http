@@ -1,17 +1,22 @@
+@uri = https://herbie-21.herokuapp.com
+@id = 1
+
 ### Signup
-post https://herbie-21.herokuapp.com/user/signup
+post {{uri}}/user/signup
 content-type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test3@test.com",
   "password": "teste"
 }
 
 ### Login
-POST https://herbie-21.herokuapp.com/user/login
+POST {{uri}}/user/login
 content-type: application/json
 
 {
   "email": "test@test.com",
   "password": "teste"
 }
+### Delete
+delete {{uri}}/user/{{id}}
