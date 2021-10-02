@@ -1,0 +1,17 @@
+### Signup
+post https://herbie-21.herokuapp.com/user/signup
+content-type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "teste"
+}
+
+### Login
+POST https://herbie-21.herokuapp.com/user/login
+content-type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "teste"
+}

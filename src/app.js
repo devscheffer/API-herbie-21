@@ -33,12 +33,13 @@ app.use((err, req, res, next) => {
 });
 
 // database
-mongoose.connect(process.env.db_connection, () => {
+const db_connection = `mongodb+srv://${process.env.mongodb_user}:${process.env.mongodb_password}@cluster0.3yhxp.mongodb.net/herbie-21`;
+mongoose.connect(db_connection, () => {
 	console.log("connected to mongo");
 });
 
 //server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);
 	console.log(`http://localhost:${port}/`);
