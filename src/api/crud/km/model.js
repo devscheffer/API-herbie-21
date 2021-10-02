@@ -8,16 +8,15 @@ const schema_km = new mongoose.Schema(
 			type: Date,
 			default: Date.now,
 			required: true,
-
 		},
 		km: {
 			type: Number,
 			required: true,
 		},
-        observation:{
-            type: String,
-            required: false,
-        }
+		observation: {
+			type: String,
+			required: false,
+		},
 	},
 	{collection: "km"}
 );
