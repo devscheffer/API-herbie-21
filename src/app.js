@@ -13,17 +13,17 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // router
-
-const route_user = require("./api/crud/user/router")
-const route_pressao = require("./api/crud/pressao/router")
-const route_km = require("./api/crud/km/router")
-const route_combustivel = require("./api/crud/combustivel/router")
-const route_manutencao = require("./api/crud/manutencao/router")
+const route_user = require("./api/crud/user/router");
+const route_pressao = require("./api/crud/pressao/router");
+const route_km = require("./api/crud/km/router");
+const route_combustivel = require("./api/crud/combustivel/router");
+const route_manutencao = require("./api/crud/manutencao/router");
 
 app.get("/", () => {
 	return "hello world";
 });
-app.use("/user",route_user);
+
+app.use("/user", route_user);
 app.use("/pressao", route_pressao);
 app.use("/km", route_km);
 app.use("/combustivel", route_combustivel);
