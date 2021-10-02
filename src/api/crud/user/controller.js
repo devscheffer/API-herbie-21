@@ -35,6 +35,7 @@ exports.signup = async (req, res, next) => {
 // [x] login
 exports.login = async (req, res, next) => {
 	try {
+        console.log(req.body)
 		const model_check = await model.findOne({email: req.body.email});
 		if (model_check.length < 1) {
 			return res.status(401).json({
@@ -68,9 +69,9 @@ exports.login = async (req, res, next) => {
 			);
 		}
 	} catch (err) {
+        console.log(err);
 		res.status(500).json({
-			error: err,
-            test: 'coisa ruim'
+			error: err
 		});
 	}
 };
