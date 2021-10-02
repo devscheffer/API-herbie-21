@@ -34,7 +34,7 @@ exports.signup = async (req, res, next) => {
 };
 // [x] login
 exports.login = async (req, res, next) => {
-	// try {
+	try {
 		const model_check = await model.findOne({email: req.body.email});
 		if (model_check.length < 1) {
 			return res.status(401).json({
@@ -66,12 +66,12 @@ exports.login = async (req, res, next) => {
 					}
 				}
 			);
-		};
-// 	} catch (err) {
-// 		res.status(500).json({
-// 			error: err,
-// 		});
-// 	}
+		}
+	} catch (err) {
+		res.status(500).json({
+			error: err,
+		});
+	}
 };
 
 // [x] delete
