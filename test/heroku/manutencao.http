@@ -1,0 +1,44 @@
+@uri = https://herbie-21.herokuapp.com
+@route = manutencao
+@path = {{uri}}/{{route}}
+@id = 615874eaf4586743d1f8ff8f
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMxODY5ODUsImV4cCI6MTYzMzE5MDU4NX0.Ts9KCjmmz8NFDj8T02J31sPrfb-Nu1Rql1VNgsi063U
+
+### [x] Create
+post {{path}}/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+		"date": "2021-01-01",
+		"service": "Troca de peca",
+		"category": "peca",
+		"price": 200.00,
+		"observation": "test12"
+}
+
+### [x] Read all
+get {{path}}/
+Authorization: Bearer {{token}}
+
+### [x] Read id
+get {{path}}/{{id}}
+Authorization: Bearer {{token}}
+
+### [x] Update
+PATCH {{path}}/{{id}}
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+		"date": "2021-01-01",
+		"service": "Troca de peca",
+		"category": "peca",
+		"price": 210.00,
+		"observation": "test12"
+}
+
+### [x] Delete
+DELETE {{path}}/{{id}}
+Authorization: Bearer {{token}}
+

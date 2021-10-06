@@ -1,0 +1,38 @@
+@uri = https://herbie-21.herokuapp.com
+@route = pressao
+@path = {{uri}}/{{route}}
+@id = 6155cba766dca8b0a27acd34
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMyMTc0NTEsImV4cCI6MTYzMzIyMTA1MX0.9a60C_H_W3YKNY0oaX29iBMmddmsAsoqSAuwqjp7wKY
+## post code 201
+### [x] Create
+post {{path}}/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "position": "fd",
+  "pressure": 33,
+  "observation":"teste"
+}
+### [x] Read all
+get {{path}}/
+Authorization: Bearer {{token}}
+
+### [x] Read id
+get {{path}}/{{id}}
+Authorization: Bearer {{token}}
+
+### [x] Update
+PATCH {{path}}/{{id}}
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+  "position": "fd",
+  "pressure": 23
+}
+
+### [x] Delete
+DELETE {{path}}/{{id}}
+Authorization: Bearer {{token}}
+
