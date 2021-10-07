@@ -4,14 +4,13 @@ const model = require("./model");
 
 // [x] post
 exports.post = async (req, res, next) => {
-	const model_post = new model({
-		date: req.body.date,
-		km: req.body.km,
-		observation: req.body.observation,
-	});
+
 	try {
-		const saved_model_post = await model_post.save();
-		res.status(200).json(saved_model_post);
+		const saved_model_post = await model.create({
+			...req.body,
+			user: req.user_data.userId,
+		});
+		res.status(201).json(saved_model_post);
 	} catch (err) {
 		res.status(400).json({message: err});
 	}

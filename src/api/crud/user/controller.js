@@ -14,12 +14,12 @@ exports.signup = async (req, res, next) => {
 			});
 		} else {
 			bcrypt.hash(req.body.password, 10, async (err, hash) => {
-				const model_post = new model({
-					email: req.body.email,
-					password: hash,
-				});
 
-				const saved_model_post = await model_post.save();
+
+				const saved_model_post = await model.create({
+                    ...req.body,
+                    user: req.user_data.userId,
+                });
 				res.status(201).json({
 					message: "User created successfully",
 					model: saved_model_post,
@@ -35,7 +35,6 @@ exports.signup = async (req, res, next) => {
 // [x] login
 exports.login = async (req, res, next) => {
 	try {
-        console.log(req.body)
 		const model_check = await model.findOne({email: req.body.email});
 		if (model_check.length < 1) {
 			return res.status(401).json({

@@ -29,6 +29,11 @@ const schema_combustivel = new mongoose.Schema(
 			type: String,
 			required: false,
 		},
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "user",
+			required: true,
+		},
 	},
 	{collection: "combustivel"}
 );

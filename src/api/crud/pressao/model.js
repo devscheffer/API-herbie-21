@@ -8,7 +8,6 @@ const schema_pressao = new mongoose.Schema(
 			type: Date,
 			default: Date.now,
 			required: true,
-
 		},
 		position: {
 			type: String,
@@ -18,10 +17,15 @@ const schema_pressao = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
-        observation:{
-            type: String,
-            required: false,
-        }
+		observation: {
+			type: String,
+			required: false,
+		},
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "user",
+			required: true,
+		},
 	},
 	{collection: "pressao"}
 );

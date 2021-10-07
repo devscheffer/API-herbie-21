@@ -2,7 +2,7 @@
 @route = pressao
 @path = {{uri}}/{{route}}
 @id = 6155cb9f66dca8b0a27acd32
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMxODMzMjUsImV4cCI6MTYzMzE4NjkyNX0.tUQt-qvOk0iNvUr67Wlff1io954-S6j7tggFQeUN8pA
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzM1NzM5NjAsImV4cCI6MTYzMzU3NzU2MH0.XTer5Y4ets_lP5g2HpSaIpeDfuRkoWwOpeCnrE44oRU
 
 ### [x] Create
 post {{path}}/
