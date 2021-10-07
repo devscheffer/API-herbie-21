@@ -7,11 +7,11 @@ exports.post = async (req, res, next) => {
 
 
 	try {
-		const saved_model_post = await model.create({
+		const model_post = await model.create({
 			...req.body,
 			user: req.user_data.userId,
 		});
-		res.status(201).json(saved_model_post);
+		res.status(201).json(model_post);
 	} catch (err) {
 		res.status(400).json({message: err});
 	}
@@ -20,7 +20,7 @@ exports.post = async (req, res, next) => {
 // [x] get_all
 exports.get_all = async (req, res, next) => {
 	try {
-		const model_all = await model.find();
+		const model_all = await model.find().populate("user");
 		res.status(200).json(model_all);
 	} catch (err) {
 		res.status(400).json({message: err});
@@ -30,7 +30,7 @@ exports.get_all = async (req, res, next) => {
 // [x] get_by_id
 exports.get_by_id = async (req, res, next) => {
 	try {
-		const model_id = await model.findById(req.params.id);
+		const model_id = await model.findById(req.params.id).populate("user");
         if(model_id){
             res.status(200).json(model_id);
         }else{
@@ -43,7 +43,7 @@ exports.get_by_id = async (req, res, next) => {
 // [x] delete
 exports.delete = async (req, res, next) => {
 	try {
-		const model_delete = await model.deleteOne({_id: req.params.id});
+		const model_delete = await model.findByIdAndDelete({_id: req.params.id});
 		res.status(200).json(model_delete);
 	} catch (err) {
 		res.status(400).json({message: err});

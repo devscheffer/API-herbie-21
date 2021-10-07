@@ -14,21 +14,19 @@ exports.signup = async (req, res, next) => {
 			});
 		} else {
 			bcrypt.hash(req.body.password, 10, async (err, hash) => {
-
-
-				const saved_model_post = await model.create({
-                    ...req.body,
-                    user: req.user_data.userId,
-                });
+				const model_post = await model.create({
+					...req.body,
+					user: req.user_data.userId,
+				});
 				res.status(201).json({
 					message: "User created successfully",
-					model: saved_model_post,
+					model: model_post,
 				});
 			});
 		}
 	} catch (err) {
 		res.status(500).json({
-			error: err
+			error: err,
 		});
 	}
 };
@@ -68,9 +66,9 @@ exports.login = async (req, res, next) => {
 			);
 		}
 	} catch (err) {
-        console.log(err);
+		console.log(err);
 		res.status(500).json({
-			error: err
+			error: err,
 		});
 	}
 };
@@ -78,7 +76,7 @@ exports.login = async (req, res, next) => {
 // [x] delete
 exports.delete = async (req, res, next) => {
 	try {
-		const model_delete = await model.deleteOne({_id: req.params.id});
+		const model_delete = await model.findByIdAndDelete({_id: req.params.id});
 		res.status(200).json({
 			message: "User deleted successfully",
 			model: model_delete,
