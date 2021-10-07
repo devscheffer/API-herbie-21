@@ -10,7 +10,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "position": "fd",
+  "position": "fr",
   "pressure": 33,
   "observation":"teste"
 }
@@ -28,7 +28,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-  "position": "fd",
+  "position": "bl",
   "pressure": 23
 }
 

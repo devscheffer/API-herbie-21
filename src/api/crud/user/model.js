@@ -8,11 +8,16 @@ const schema_user = new mongoose.Schema(
 			type: String,
 			required: true,
 			unique: true,
-            match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+			match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
 		},
 		password: {
 			type: String,
 			required: true,
+		},
+		type: {
+			type: String,
+			required: true,
+			enum: ["admin", "user"],
 		},
 	},
 	{collection: "user"}

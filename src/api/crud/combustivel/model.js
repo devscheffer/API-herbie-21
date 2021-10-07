@@ -16,6 +16,7 @@ const schema_combustivel = new mongoose.Schema(
 		gas_type: {
 			type: String,
 			required: true,
+            enum: ['gasolina comum', 'gasolina aditivada', 'etanol', 'GNV', 'Diesel'],
 		},
 		volume: {
 			type: Number,
