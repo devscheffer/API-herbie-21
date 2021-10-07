@@ -18,7 +18,7 @@ exports.post = async (req, res, next) => {
 // [x] get_all
 exports.get_all = async (req, res, next) => {
 	try {
-		const model_all = await model.find().populate("user");
+		const model_all = await model.find({user: req.user_data.userId}).populate("user");
 		res.status(200).json(model_all);
 	} catch (err) {
 		res.status(400).json({message: err});
@@ -28,7 +28,7 @@ exports.get_all = async (req, res, next) => {
 // [x] get_by_id
 exports.get_by_id = async (req, res, next) => {
 	try {
-		const model_id = await model.findById(req.params.id).populate("user");
+		const model_id = await model.findOne({_id:req.params.id,user: req.user_data.userId}).populate("user");
 		if (model_id) {
 			res.status(200).json(model_id);
 		} else {
@@ -41,7 +41,7 @@ exports.get_by_id = async (req, res, next) => {
 // [x] delete
 exports.delete = async (req, res, next) => {
 	try {
-		const model_delete = await model.findByIdAndDelete({_id: req.params.id});
+		const model_delete = await model.findOneAndDelete({_id: req.params.id,user: req.user_data.userId});
 		res.status(200).json(model_delete);
 	} catch (err) {
 		res.status(400).json({message: err});
@@ -50,8 +50,8 @@ exports.delete = async (req, res, next) => {
 // [x] patch
 exports.patch = async (req, res, next) => {
 	try {
-		const model_update = await model.findByIdAndUpdate(
-			{_id: req.params.id},
+		const model_update = await model.findOneAndUpdate(
+			{_id: req.params.id,user: req.user_data.userId},
 			{
 				$set: {
 					date: req.body.date,
