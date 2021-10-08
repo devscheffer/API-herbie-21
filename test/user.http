@@ -1,4 +1,4 @@
-@uri = https://herbie-21.herokuapp.com
+@uri = {{$dotenv uri}}
 @id = 1
 
 ### Signup

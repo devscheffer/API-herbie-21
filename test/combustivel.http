@@ -1,8 +1,8 @@
-@uri = https://herbie-21.herokuapp.com
+@uri = {{$dotenv uri}}
+@token = {{$dotenv token}}
 @route = combustivel
 @path = {{uri}}/{{route}}
 @id = 615873326ec3ae9ce1e938ae
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI2MTRkNDczNmUzNDE2OTkzZTY5ZTA5OWIiLCJpYXQiOjE2MzMxODMzMjUsImV4cCI6MTYzMzE4NjkyNX0.tUQt-qvOk0iNvUr67Wlff1io954-S6j7tggFQeUN8pA
 
 ### [x] Create
 post {{path}}/
