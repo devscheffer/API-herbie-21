@@ -12,7 +12,7 @@ const schema_pressao = new mongoose.Schema(
 		position: {
 			type: String,
 			required: true,
-            enum: ['fl','fl','bl','br']
+            enum: ['fl','fr','bl','br']
 		},
 		pressure: {
 			type: Number,
