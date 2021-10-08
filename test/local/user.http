@@ -9,7 +9,7 @@ post {{path}}/signup
 content-type: application/json
 
 {
-  "email": "test3@test.com",
+  "email": "test4@test.com",
   "password": "teste"
 }
 
@@ -17,8 +17,9 @@ content-type: application/json
 POST {{path}}/login
 content-type: application/json
 
+
 {
-  "email": "test@test.com",
+  "email": "test4@test.com",
   "password": "teste"
 }
 ### [x] Delete

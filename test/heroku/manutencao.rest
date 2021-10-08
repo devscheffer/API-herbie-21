@@ -11,11 +11,13 @@ Authorization: Bearer {{token}}
 
 {
 		"date": "2021-01-01",
-		"service": "Troca de peca",
+		//"service": "Troca de peca",
 		"category": "peca",
 		"price": 200.00,
 		"observation": "test12"
 }
+
+// precisa aparecer bad request quando nao enviar um dado obrigatorio
 
 ### [x] Read all
 get {{path}}/
