@@ -15,7 +15,8 @@ exports.signup = async (req, res, next) => {
 		} else {
 			bcrypt.hash(req.body.password, 10, async (err, hash) => {
 				const model_post = await model.create({
-					...req.body,
+					email: req.body.email,
+					password: hash,
 					type: "user",
 				});
 				res.status(201).json({
