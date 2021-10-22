@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // router
-const route_user = require("./api/crud/user/router");
+const route_user = require("./api/user/router");
 const route_pressao = require("./api/crud/pressao/router");
 const route_km = require("./api/crud/km/router");
 const route_combustivel = require("./api/crud/combustivel/router");

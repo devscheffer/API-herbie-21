@@ -77,7 +77,10 @@ exports.login = async (req, res, next) => {
 // [x] delete
 exports.delete = async (req, res, next) => {
 	try {
-		const model_delete = await model.findOneAndDelete({_id: req.params.id,user: req.user_data.userId});
+		const model_delete = await model.findOneAndDelete({
+			_id: req.params.id,
+			...filter,
+		});
 		res.status(200).json({
 			message: "User deleted successfully",
 			model: model_delete,

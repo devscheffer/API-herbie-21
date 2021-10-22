@@ -2,7 +2,7 @@
 @token = {{$dotenv token}}
 @route = pressao
 @path = {{uri}}/{{route}}
-@id = 615f8aade84437b05a5128ab
+@id = 616ab629edb0ae6d277e541d
 
 ### [x] Create
 post {{path}}/
