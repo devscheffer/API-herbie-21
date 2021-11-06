@@ -21,6 +21,10 @@ const schema_manutencao = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
+        place: {
+			type: String,
+			required: false,
+		},
 		observation: {
 			type: String,
 			required: false,

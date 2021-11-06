@@ -67,6 +67,7 @@ exports.patch = async (req, res, next) => {
 					date: req.body.date,
 					service: req.body.position,
 					category: req.body.pressure,
+                    place:req.body.place,
 					price: req.body.price,
 					observation: req.body.observation,
 				},

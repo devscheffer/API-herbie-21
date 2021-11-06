@@ -14,7 +14,11 @@ const schema_pressao = new mongoose.Schema(
 			required: true,
             enum: ['fl','fr','bl','br']
 		},
-		pressure: {
+		pressure_old: {
+			type: Number,
+			required: true,
+		},
+		pressure_new: {
 			type: Number,
 			required: true,
 		},
