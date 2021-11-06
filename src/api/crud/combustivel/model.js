@@ -22,10 +22,6 @@ const schema_combustivel = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
-		km: {
-			type: Number,
-			required: true,
-		},
 		observation: {
 			type: String,
 			required: false,
