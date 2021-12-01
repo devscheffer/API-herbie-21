@@ -12,7 +12,7 @@ Authorization: Bearer {{token}}
 {
 "date": "2021-01-01",
 		"price": 6.56,
-		"gas_type": "gasolina comum",
+		"gas_type": "gasolina_comum",
 		"volume": 10.0,
 "observation": "teste2"
 }

@@ -13,6 +13,7 @@ Authorization: Bearer {{token}}
 		"date": "2021-01-01",
 		//"service": "Troca de peca",
 		"category": "peca",
+        "service":"manutencao",
 		"price": 200.00,
 		"observation": "test12"
 }

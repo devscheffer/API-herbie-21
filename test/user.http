@@ -6,8 +6,8 @@ post {{uri}}/user/signup
 content-type: application/json
 
 {
-  "email": "test44@test.com",
-  "password": "teste"
+  "email": "senac@senac.com",
+  "password": "senac"
 }
 
 ### Login
@@ -15,8 +15,8 @@ POST {{uri}}/user/login
 content-type: application/json
 
 {
-  "email": "test4@test.com",
-  "password": "teste"
+  "email": "senac@senac.com",
+  "password": "senac"
 }
 ### Delete
 delete {{uri}}/user/{{id}}
