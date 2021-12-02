@@ -14,10 +14,15 @@ content-type: application/json
 POST {{uri}}/user/login
 content-type: application/json
 
+# {
+#   "email":"senac@senac.com",
+#   "password": "senac"
+# }
 {
-  "email": "senac@senac.com",
-  "password": "senac"
+  "email":"test@test.com",
+  "password": "teste"
 }
+
 ### Delete
 delete {{uri}}/user/{{id}}
 
