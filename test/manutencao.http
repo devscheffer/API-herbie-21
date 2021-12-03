@@ -2,7 +2,7 @@
 @token = {{$dotenv token}}
 @route = manutencao
 @path = {{uri}}/{{route}}
-@id = 615874eaf4586743d1f8ff8f
+@id = 61a92557aba64a37a7f6dba3
 
 ### [x] Create
 post {{path}}/
@@ -13,6 +13,7 @@ Authorization: Bearer {{token}}
 		"date": "2021-01-01",
 		//"service": "Troca de peca",
 		"category": "peca",
+        "service":"manutencao",
 		"price": 200.00,
 		"observation": "test12"
 }

@@ -66,7 +66,8 @@ exports.patch = async (req, res, next) => {
 				$set: {
 					date: req.body.date,
 					position: req.body.position,
-					pressure: req.body.pressure,
+					pressure_old: req.body.pressure_old,
+					pressure_new: req.body.pressure_new,
 					observation: req.body.observation,
 				},
 			}

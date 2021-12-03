@@ -63,7 +63,6 @@ exports.patch = async (req, res, next) => {
 					price: req.body.price,
 					gas_type: req.body.gas_type,
 					volume: req.body.volume,
-					km: req.body.km,
 					observation: req.body.observation,
 				},
 			}

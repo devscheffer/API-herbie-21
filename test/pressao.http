@@ -11,7 +11,8 @@ Authorization: Bearer {{token}}
 
 {
   "position": "fl",
-  "pressure": 33,
+  "pressure_old": 10,
+  "pressure_new":30,
   "observation":"teste"
 }
 ### [x] Read all
